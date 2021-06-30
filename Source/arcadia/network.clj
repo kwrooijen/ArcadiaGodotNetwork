@@ -21,6 +21,12 @@
 (defn call-id! [id k & args]
   (.RpcId (a/find-node "ArcadiaNetwork") id "ArcadiaRPC" (to-array [(str (namespace k) "/" (name k)) (pr-str args)])))
 
+(defn call-unreliable! [k & args]
+  (.RpcUnreliable (a/find-node "ArcadiaNetwork") "ArcadiaRPC" (to-array [(str (namespace k) "/" (name k)) (pr-str args)])))
+
+(defn call-unreliable-id! [id k & args]
+  (.RpcUnreliableId (a/find-node "ArcadiaNetwork") id "ArcadiaRPC" (to-array [(str (namespace k) "/" (name k)) (pr-str args)])))
+
 (def default-server-opts
   {:port 3000
    :max-clients 100
