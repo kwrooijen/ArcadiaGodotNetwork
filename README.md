@@ -102,13 +102,13 @@ Next you can call these handlers using `arcadia.network/rpc!` and `arcadia.netwo
 (arcadia.network/rpc! :server/handler "Hello" "world!")
 
 ;; 1 == server
-(arcadia.network/rpc-id! 1 :server/call "Hello" "world!")
+(arcadia.network/rpc-id! 1 :server/handler "Hello" "world!")
 
 ;; rpc! == all connected clients
 (arcadia.network/rpc-unreliable! :server/handler "Hello" "world!")
 
 ;; 1 == server
-(arcadia.network/rpc-unreliable-id! 1 :server/call "Hello" "world!")
+(arcadia.network/rpc-unreliable-id! 1 :server/handler "Hello" "world!")
 ```
 
 ## Author / License
