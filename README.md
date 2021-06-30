@@ -61,8 +61,8 @@ function to add the ArcadiaNetwork node to your game.
 (defn peer-connected [client-id]
   (a/log "client" client-id "connected"))
 
-(defn peer-disconnected [player-id]
-  (a/log "User" player-id "disconnected"))
+(defn peer-disconnected [client-id]
+  (a/log "User" client-id "disconnected"))
 
 (defn ^{:hook/tree-ready ["res://Scenes/Main.tscn"]} ready-tree [self _]
   (network/add-server-node!
