@@ -77,7 +77,7 @@
   ([] (add-client-node! default-client-opts))
   ([opts]
    (let [opts (merge default-client-opts opts)
-         client-path "ArcadiaGodot/Source/client/ArcadiaNetwork.tscn"
+         client-path "ArcadiaGodotNetwork/Source/client/ArcadiaNetwork.tscn"
          arcadia-network (-> client-path a/load-scene a/instance)]
      (a/set-state arcadia-network opts)
      (a/add-child (a/root) arcadia-network)
@@ -87,7 +87,7 @@
   ([] (add-server-node! default-client-opts))
   ([opts]
    (let [opts (merge default-server-opts opts)
-         server-path "ArcadiaGodot/Source/server/ArcadiaNetwork.tscn"
+         server-path "ArcadiaGodotNetwork/Source/server/ArcadiaNetwork.tscn"
          arcadia-network (-> server-path a/load-scene a/instance)]
      (a/set-state arcadia-network opts)
      (a/add-child (a/root) arcadia-network)

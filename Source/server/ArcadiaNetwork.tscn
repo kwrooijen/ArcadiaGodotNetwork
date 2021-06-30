@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://ArcadiaGodot/Source/ArcadiaNetwork.cs" type="Script" id=2]
+[ext_resource path="res://ArcadiaGodotNetwork/Source/ArcadiaNetwork.cs" type="Script" id=2]
 [ext_resource path="res://ArcadiaGodot/ArcadiaHook.tscn" type="PackedScene" id=3]
 
 [node name="ArcadiaNetwork" type="Node"]
