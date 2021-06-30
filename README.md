@@ -91,18 +91,24 @@ handlers and RPC calls. Handlers are defined using the `arcadia.network/handler`
 multimethod. Which takes a keyword (identifier), sender-id, and rest arguments.
 
 ```clojure
-(defmethod arcadia.network/handler :server/call [_k sender-id & args]
+(defmethod arcadia.network/handler :server/handler [_k sender-id & args]
   (a/log "Got :" args " from: " sender-id))
 ```
 
-Next you can call these handlers using `arcadia.network/call!` and `arcadia.network/call-id!`
+Next you can call these handlers using `arcadia.network/rpc!` and `arcadia.network/rpc-id!`
 
 ```clojure
-;; call! == all connected clients
-(arcadia.network/call! :server/call "Hello" "world!")
+;; rpc! == all connected clients
+(arcadia.network/rpc! :server/handler "Hello" "world!")
 
 ;; 1 == server
-(arcadia.network/call-id! :server/call 1 "Hello" "world!")
+(arcadia.network/rpc-id! :server/call 1 "Hello" "world!")
+
+;; rpc! == all connected clients
+(arcadia.network/rpc-unreliable! :server/handler "Hello" "world!")
+
+;; 1 == server
+(arcadia.network/rpc-unreliable-id! :server/call 1 "Hello" "world!")
 ```
 
 ## Author / License

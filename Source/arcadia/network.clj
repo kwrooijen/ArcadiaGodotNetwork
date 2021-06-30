@@ -15,16 +15,16 @@
 (defn handler-fn []
   #'handler_)
 
-(defn call! [k & args]
+(defn rpc! [k & args]
   (.Rpc (a/find-node "ArcadiaNetwork") "ArcadiaRPC" (to-array [(str (namespace k) "/" (name k)) (pr-str args)])))
 
-(defn call-id! [id k & args]
+(defn rpc-id! [id k & args]
   (.RpcId (a/find-node "ArcadiaNetwork") id "ArcadiaRPC" (to-array [(str (namespace k) "/" (name k)) (pr-str args)])))
 
-(defn call-unreliable! [k & args]
+(defn rpc-unreliable! [k & args]
   (.RpcUnreliable (a/find-node "ArcadiaNetwork") "ArcadiaRPC" (to-array [(str (namespace k) "/" (name k)) (pr-str args)])))
 
-(defn call-unreliable-id! [id k & args]
+(defn rpc-unreliable-id! [id k & args]
   (.RpcUnreliableId (a/find-node "ArcadiaNetwork") id "ArcadiaRPC" (to-array [(str (namespace k) "/" (name k)) (pr-str args)])))
 
 (def default-server-opts
